@@ -1,6 +1,5 @@
-# bidirectional_relevance
-
-** Bidirectional Relevance scores for Digital Histopathology (paper: Regression Concept Vectors for Bidirectional Explanations in Histopathology)
+# Regression Concept Vectors for Bidirectional Explanations in Histopathology
+** iMIMIC workshop paper: Regression Concept Vectors for Bidirectional Explanations in Histopathology
 
 This repository contains the code for implementing Bidirectional Relevance scores for Digital Histopathology, which was used for the results in the paper:
 
