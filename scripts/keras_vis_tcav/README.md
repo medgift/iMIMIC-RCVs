@@ -1,3 +1,27 @@
+Extension of the Keras Visualization Toolkit by @raghakotkerasvis: \url{https://github.com/raghakot/keras-vis}
+
+Added scripts:
+
+-- tcav.py
+
+Developed functions:
+
+compute_tcav
+
+compute_tcav_with_losses
+
+
+```
+@misc{raghakotkerasvis
+  title={keras-vis},
+  author={Kotikalapudi, Raghavendra and contributors},
+  year={2017},
+  publisher={GitHub},
+  howpublished={\url{https://github.com/raghakot/keras-vis}},
+}
+```
+
+
 # Keras Visualization Toolkit
 [![Build Status](https://travis-ci.org/raghakot/keras-vis.svg?branch=master)](https://travis-ci.org/raghakot/keras-vis)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/raghakot/keras-vis/blob/master/LICENSE)
@@ -10,17 +34,17 @@ supported visualizations include:
 - Saliency maps
 - Class activation maps
 
-All visualizations by default support N-dimensional image inputs. i.e., it generalizes to N-dim image inputs 
+All visualizations by default support N-dimensional image inputs. i.e., it generalizes to N-dim image inputs
 to your model.
 
-The toolkit generalizes all of the above as energy minimization problems with a clean, easy to use, 
-and extendable interface. Compatible with both theano and tensorflow backends with 'channels_first', 'channels_last' 
+The toolkit generalizes all of the above as energy minimization problems with a clean, easy to use,
+and extendable interface. Compatible with both theano and tensorflow backends with 'channels_first', 'channels_last'
 data format.
 
 ## Quick links
-* Read the documentation at [https://raghakot.github.io/keras-vis](https://raghakot.github.io/keras-vis). 
+* Read the documentation at [https://raghakot.github.io/keras-vis](https://raghakot.github.io/keras-vis).
 * Join the slack [channel](https://keras-vis.herokuapp.com/) for questions/discussions.
-* We are tracking new features/tasks in [waffle.io](https://waffle.io/raghakot/keras-vis). Would love it if you lend us 
+* We are tracking new features/tasks in [waffle.io](https://waffle.io/raghakot/keras-vis). Would love it if you lend us
 a hand and submit PRs.
 
 ## Getting Started
@@ -49,9 +73,9 @@ losses = [
 
 **Configure optimizer to minimize weighted loss**
 
-In order to generate natural looking images, image search space is constrained using regularization penalties. 
+In order to generate natural looking images, image search space is constrained using regularization penalties.
 Some common regularizers are defined in [regularizers](https://raghakot.github.io/keras-vis/vis.regularizers).
-Like loss functions, custom regularizer can be defined by implementing 
+Like loss functions, custom regularizer can be defined by implementing
 [Loss.build_loss](https://raghakot.github.io/keras-vis/vis.losses/#lossbuild_loss).
 
 ```python
@@ -61,12 +85,12 @@ optimizer = Optimizer(model.input, losses)
 opt_img, grads, _ = optimizer.minimize()
 ```
 
-Concrete examples of various supported visualizations can be found in 
+Concrete examples of various supported visualizations can be found in
 [examples folder](https://github.com/raghakot/keras-vis/tree/master/examples).
 
 ## Installation
 
-1) Install [keras](https://github.com/fchollet/keras/blob/master/README.md#installation) 
+1) Install [keras](https://github.com/fchollet/keras/blob/master/README.md#installation)
 with theano or tensorflow backend. Note that this library requires Keras > 2.0
 
 2) Install keras-vis
@@ -85,11 +109,11 @@ sudo pip install keras-vis
 **NOTE: The links are currently broken and the entire documentation is being reworked.
 Please see examples/ for samples.**
 
-Neural nets are black boxes. In the recent years, several approaches for understanding and visualizing Convolutional 
-Networks have been developed in the literature. They give us a way to peer into the black boxes, 
-diagnose mis-classifications, and assess whether the network is over/under fitting. 
+Neural nets are black boxes. In the recent years, several approaches for understanding and visualizing Convolutional
+Networks have been developed in the literature. They give us a way to peer into the black boxes,
+diagnose mis-classifications, and assess whether the network is over/under fitting.
 
-Guided backprop can also be used to create [trippy art](https://deepdreamgenerator.com/gallery), neural/texture 
+Guided backprop can also be used to create [trippy art](https://deepdreamgenerator.com/gallery), neural/texture
 [style transfer](https://github.com/jcjohnson/neural-style) among the list of other growing applications.
 
 Various visualizations, documented in their own pages, are summarized here.
@@ -99,7 +123,7 @@ Various visualizations, documented in their own pages, are summarized here.
 ### [Conv filter visualization](https://raghakot.github.io/keras-vis/visualizations/conv_filters)
 <img src="https://raw.githubusercontent.com/raghakot/keras-vis/master/images/conv_vis/cover.jpg?raw=true"/>
 
-*Convolutional filters learn 'template matching' filters that maximize the output when a similar template 
+*Convolutional filters learn 'template matching' filters that maximize the output when a similar template
 pattern is found in the input image. Visualize those templates via Activation Maximization.*
 
 <hr/>
@@ -121,8 +145,8 @@ pattern is found in the input image. Visualize those templates via Activation Ma
 <hr/>
 
 ### Generating animated gif of optimization progress
-It is possible to generate an animated gif of optimization progress by leveraging 
-[callbacks](https://raghakot.github.io/keras-vis/vis.callbacks). Following example shows how to visualize the 
+It is possible to generate an animated gif of optimization progress by leveraging
+[callbacks](https://raghakot.github.io/keras-vis/vis.callbacks). Following example shows how to visualize the
 activation maximization for 'ouzel' class (output_index: 20).
 
 ```python
@@ -154,8 +178,8 @@ opt.minimize(max_iter=500, verbose=True, image_modifiers=[Jitter()], callbacks=[
 
 ```
 
-Notice how the output jitters around? This is because we used [Jitter](https://raghakot.github.io/keras-vis/vis.modifiers/#jitter), 
-a kind of [ImageModifier](https://raghakot.github.io/keras-vis/vis.modifiers/#imagemodifier) that is known to produce 
+Notice how the output jitters around? This is because we used [Jitter](https://raghakot.github.io/keras-vis/vis.modifiers/#jitter),
+a kind of [ImageModifier](https://raghakot.github.io/keras-vis/vis.modifiers/#imagemodifier) that is known to produce
 crisper activation maximization images. As an exercise, try:
 
 - Without Jitter
@@ -164,17 +188,3 @@ crisper activation maximization images. As an exercise, try:
 ![opt_progress](https://raw.githubusercontent.com/raghakot/keras-vis/master/images/opt_progress.gif?raw=true "Optimization progress")
 
 <hr/>
-
-## Citation
-
-Please cite keras-vis in your publications if it helped your research. Here is an example BibTeX entry:
-
-```
-@misc{raghakotkerasvis
-  title={keras-vis},
-  author={Kotikalapudi, Raghavendra and contributors},
-  year={2017},
-  publisher={GitHub},
-  howpublished={\url{https://github.com/raghakot/keras-vis}},
-}
-```
