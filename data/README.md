@@ -5,13 +5,16 @@ The models were trained on:
 
 Concept measures were extracted from the nuclei segmentation data set:
 * A dataset and a technique for generalized nuclear segmentation for computational pathology. Kumar et al. (https://ieeexplore.ieee.org/document/7872382/)
-To download the data: https://nucleisegmentationbenchmark.weebly.com/dataset.html
+
+The full dataset can be downloaded at: https://nucleisegmentationbenchmark.weebly.com/dataset.html
+
 The following files are breast tissue slides: 
-*
-*
-*
-*
-*
-*
-The dataset contains WSIs of several organs with more than 21,000 annotated nuclei boundaries. From this data set,
-we extracted 300 training patches only from the WSIs of breast tissue.
+
+* TCGA-A7-A13E-01Z-00-DX1
+* TCGA-AR-A1AK-01Z-00-DX1
+* TCGA-E2-A14V-01Z-00-DX1
+* TCGA-A7-A13F-01Z-00-DX1
+* TCGA-AR-A1AS-01Z-00-DX1
+* TCGA-E2-A1B5-01Z-00-DX1
+
+To run the code create a folder 'datasets/training/' with the breast tissue slides. 
