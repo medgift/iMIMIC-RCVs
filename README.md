@@ -18,6 +18,21 @@ To install the list of dependencies run:
 ## Usage
 This repository contains a jupyter notebook and the link to the necessary data and trained models to replicate the results. Please open the notebook RCV_notebook.ipynb for more information.
 
+## Summary 
+Recent work on Testing with Concept Activation
+Vectors (TCAV) proposed directional derivatives to quantify the in
+uence of user-defined concepts on the network output [1]. However, diagnostic
+concepts are often continuous measures that might be counter intuitive
+to describe by their presence or absence.
+In this paper, we extend TCAV from a classification problem to a regression
+problem by computing Regression Concept Vectors (RCVs). Instead of seeking
+a discriminator between two concepts, we
+seek the direction of greatest increase of the measures for a single continuous
+concept. We measure the relevance of a concept
+with bidirectional relevance scores, Br. The Br scores assume positive values
+when increasing values of the concept measures positively affect classification
+and negative in the opposite case.
+
 ## Results
 
 #### Correlation Analysis
@@ -42,12 +57,24 @@ Hence, more abstract concepts, potentially useful in other applications, can be 
     <img src="results/featslearningdef.png" width=700px>
 </p>
 
+#### Bidirectional Relevance Scores
+Br scores were formulated by taking into
+account the principles of explanation continuity and selectivity proposed in [2].
+For the former, we consider whether the sensitivity scores are similar for similar
+data samples. For the latter, we redistribute the final relevance to concepts with
+the strongest impact on the decision function. More details about the definition of Br scores are reported in the paper. 
+
+<p align="center">
+    <img src="results/tumorBr.png" width=700px>
+</p>
+
+
 ## Further applications
 We applied RCVs to eye data. See this repository for more details.
 
 ## Relevant Research
- * Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (https://arxiv.org/abs/1711.11279; https://github.com/tensorflow/tcav/blob/master/README.md)
-
+ * [1] Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (https://arxiv.org/abs/1711.11279; Kim, B. et al https://github.com/tensorflow/tcav/blob/master/README.md)
+ * [2] Methods for interpreting and understanding deep neural networks. Montavon, G. et al 
 ## Credits
 RCVs were computed by extending the keras-vis library: https://github.com/raghakot/keras-vis.
 Staining normalization was performed thanks to the StainTools library: https://github.com/Peter554/StainTools.git.
