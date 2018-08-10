@@ -3,7 +3,7 @@ Mara Graziani, Vincent Andrearczyk, Henning Muller.
 
 To be presented at Interpretability of Machine Intelligence in Medical Image Computing at MICCAI 2018.
 
-Research Gate Preview:
+Paper Preview:
 
 This repository contains the code for implementing Regression Concept Vectors and Bidirectional Relevance scores, which were used to obtain the results presented in the paper.
 
