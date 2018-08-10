@@ -23,8 +23,9 @@ This repository contains a jupyter notebook and the link to the necessary data a
 #### Correlation Analysis
 As a prior analysis, we compute the Pearson product-moment correlation coefficient between the concept measures and the network prediction for a set of patches. More information about the Correlation Analysis and the concept measures used can be found in the paper.
 
-|   | correlation | ASM | eccentricity | Euler | area | contrast |
-|   | ----------- | --- | ------------ | ----- | ---- | -------- |
+
+| r/p | correlation | ASM | eccentricity | Euler | area | contrast |
+| --- | ----------- | --- | ------------ | ----- | ---- | -------- |
 r |-0.2285 | -0.1869 | -0.1460 | 0.1534| 0.2820 | 0.4119|
 p-value |0.001 |0.001 | 0.01 |0.001 |0.001 |0.001|
 
