@@ -19,7 +19,9 @@ To install the list of dependencies run:
 This repository contains a jupyter notebook and the link to the necessary data and trained models to replicate the results. Please open the notebook RCV_notebook.ipynb for more information.
 
 ## Results
-
+<p align="center">
+    <img src="results/correlation.png" width=700px>
+</p>
 ## Further applications
 We applied RCVs to eye data. See this repository for more details.
 

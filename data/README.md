@@ -18,3 +18,5 @@ The following files are breast tissue slides:
 * TCGA-E2-A1B5-01Z-00-DX1
 
 To run the code create a folder 'datasets/training/' with the breast tissue slides. 
+
+Alternatively you can use the already preprocessed data that we provide in this folder.
