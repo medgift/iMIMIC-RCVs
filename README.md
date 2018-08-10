@@ -24,9 +24,7 @@ This repository contains a jupyter notebook and the link to the necessary data a
 We applied RCVs to eye data. See this repository for more details.
 
 ## Relevant Research
- * Testing with Concept Activation Vectors (TCAV)
-       - https://arxiv.org/abs/1711.11279
-       - https://github.com/tensorflow/tcav/blob/master/README.md
+ * Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (https://arxiv.org/abs/1711.11279; https://github.com/tensorflow/tcav/blob/master/README.md)
 
 ## Credits
 RCVs were computed by extending the keras-vis library: .
