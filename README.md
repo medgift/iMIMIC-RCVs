@@ -75,6 +75,9 @@ We applied RCVs to eye data. See this repository for more details.
 ## Relevant Research
  * [1] Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (https://arxiv.org/abs/1711.11279; Kim, B. et al https://github.com/tensorflow/tcav/blob/master/README.md)
  * [2] Methods for interpreting and understanding deep neural networks. Montavon, G. et al 
+
 ## Credits
+
 RCVs were computed by extending the keras-vis library: https://github.com/raghakot/keras-vis.
+
 Staining normalization was performed thanks to the StainTools library: https://github.com/Peter554/StainTools.git.
