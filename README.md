@@ -19,9 +19,19 @@ To install the list of dependencies run:
 This repository contains a jupyter notebook and the link to the necessary data and trained models to replicate the results. Please open the notebook RCV_notebook.ipynb for more information.
 
 ## Results
+
+As a prior analysis, we compute the Pearson product-moment correlation coefficient between the concept measures and the network prediction for a set of patches. More information about the Correlation Analysis and the concept measures used can be found in the paper.
+
+|   | correlation | ASM | eccentricity | Euler | area | contrast
+|------------|-----------|
+r |-0.2285 | -0.1869 | -0.1460 | 0.1534| 0.2820 | 0.4119
+p-value |0.001 |0.001 | 0.01 |0.001 |0.001 |0.001
+
+
 <p align="center">
     <img src="results/correlation.png" width=700px>
 </p>
+
 ## Further applications
 We applied RCVs to eye data. See this repository for more details.
 
