@@ -1,26 +1,28 @@
-# Regression Concept Vectors for Bidirectional Explanations in Histopathology
-** iMIMIC workshop paper: Regression Concept Vectors for Bidirectional Explanations in Histopathology
+# Regression Concept Vectors for Bidirectional Explanations in Histopathology (iMIMIC at MICCAI 2018)
+Mara Graziani, Vincent Andrearczyk, Henning Muller
+To be presented at Interpretability of Machine Intelligence in Medical Image Computing at MICCAI 2018
+Research Gate Preview:
 
-This repository contains the code for implementing Bidirectional Relevance scores for Digital Histopathology, which was used for the results in the paper:
+This repository contains the code for implementing Regression Concept Vectors and Bidirectional Relevance scores, which were used to obtain the results presented in the paper.
 
-    "Regression Concept Vectors for Bidirectional Explanations in Histopathology"
+## Dependencies
+This code runs in Python >= 2.7.
+Keras >= 2.1 and Tensorflow backend are required.
 
-Dependencies
+To install the list of dependencies run:
+    pip install requirements.txt
 
-    This code was written in Python 2.7 and relies on the numpy and pandas modules
+## Usage
+This repository contains a jupyter notebook and the link to the necessary data and trained models to replicate the results. Please open the notebook RCV_notebook.ipynb for more information.
 
-Usage
+## Results
 
-Relevant Research
+## Further applications
+We applied RCVs to eye data. See this repository for more details.
 
-Ours
+## Relevant Research
+Testing with Concept Activation Vectors (TCAV)
 
-By others
-
-   TCAV paper
-
-Dependencies & Installation
-
-Documentation
-
-
+## Credits
+RCVs were computed by extending the keras-vis library: .
+Staining normalization was performed thanks to the nanan library: . 

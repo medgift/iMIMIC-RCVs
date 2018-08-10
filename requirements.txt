@@ -1,0 +1,17 @@
+numpy
+pandas
+seaborn
+h5py
+keras==2.1.3
+scikit-learn
+tensorflow-gpu==1.6
+pillow
+scipy
+matplotlib
+iphython
+jupyter
+scikit-image
+cv2
+openslide-python
+keras-vis
+logging
