@@ -29,9 +29,17 @@ As a prior analysis, we compute the Pearson product-moment correlation coefficie
 r |-0.2285 | -0.1869 | -0.1460 | 0.1534| 0.2820 | 0.4119|
 p-value |0.001 |0.001 | 0.01 |0.001 |0.001 |0.001|
 
+#### Are we learning the concepts?
+
+The performance of the linear regression was
+computed for all the patches over
+multiple reruns to check if the network is learning the concepts and in which layers. 
+The learning of the concepts across layers is linked to the size of the
+receptive field of the neurons and the increasing complexity of the sought patterns. 
+Hence, more abstract concepts, potentially useful in other applications, can be learned and analyzed in deep layers of the network.
 
 <p align="center">
-    <img src="results/correlation.png" width=700px>
+    <img src="results/featslearningdef.png" width=700px>
 </p>
 
 ## Further applications
