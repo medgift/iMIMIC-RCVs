@@ -53,7 +53,7 @@ class Camnet():
 
         model.compile(
                       loss=settings['loss'],
-                      optimizer=opt;
+                      optimizer=opt,
                       metrics=['accuracy']
                       )
         return model
