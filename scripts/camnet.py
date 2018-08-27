@@ -29,8 +29,8 @@ class Camnet():
     def __init__(self, config_file_path='./config.cfg'):
         self.config_file_path=config_file_path
 
-    def get_Model(self, config_file_path):
-        settings = parseTrainingOptions(config_file_path)
+    def get_model(self):
+        settings = parseTrainingOptions(self.config_file_path)
 
         if settings['model_type']=='resnet':
             base_model = keras.applications.resnet50.ResNet50(
