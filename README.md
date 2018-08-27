@@ -15,6 +15,12 @@ To install the list of dependencies run:
 
     pip install requirements.txt
 
+Run in Anaconda virtual environment (recommended): 
+    
+    conda create -n venv pip python=2.7
+    source activate venv
+    pip install requirements.txt
+
 ## Usage
 This repository contains a jupyter notebook and the link to the necessary data and trained models to replicate the results. Please open the notebook RCV_notebook.ipynb for more information.
 

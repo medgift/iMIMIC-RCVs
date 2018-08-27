@@ -1,8 +1,9 @@
 from __future__ import absolute_import
 import sys
-sys.path.append('./camnet/')
-sys.path.append('./keras_vis_tcav/vis/utils')
-from normalizers import *
+#sys.path.append('./camnet/')
+#sys.path.append('./scripts/keras_vis_rcv/vis/utils')
+sys.path.append('./scripts/')
+import stain_tools
 import numpy as np
 import os
 from PIL import Image
@@ -14,7 +15,7 @@ from xml.etree.ElementTree import parse
 from os import listdir
 from os.path import join, isfile, exists, splitext
 import numpy as np
-from openslide import OpenSlide
+#from openslide import OpenSlide
 #%matplotlib inline
 import matplotlib.pyplot as plt
 import skimage.segmentation
@@ -39,7 +40,7 @@ from vis.backprop_modifiers import get
 from vis.utils import utils
 
 def get_normalizer():
-    normalizer = ReinhardNormalizer()
+    normalizer = stain_tools.ReinhardNormalizer()
     patch = np.load('../normalizing_patch.npy')
     normalizer.fit(patch)
     return normalizer
