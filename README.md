@@ -13,13 +13,13 @@ Keras >= 2.1 and Tensorflow backend are required.
 
 To install the list of dependencies run:
 
-    pip install requirements.txt
+    pip install -r requirements.txt
 
 Run in Anaconda virtual environment (recommended): 
     
     conda create -n venv pip python=2.7
     source activate venv
-    pip install requirements.txt
+    pip install -r requirements.txt
 
 ## Usage
 This repository contains a jupyter notebook and the link to the necessary data and trained models to replicate the results. Please open the notebook RCV_notebook.ipynb for more information.
