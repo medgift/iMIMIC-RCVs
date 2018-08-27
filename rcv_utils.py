@@ -8,31 +8,17 @@ import numpy as np
 import os
 from PIL import Image
 import matplotlib.pyplot as plt
-import sys
 from skimage.feature import greycoprops, greycomatrix
 import cv2
 from xml.etree.ElementTree import parse
-from os import listdir
-from os.path import join, isfile, exists, splitext
-import numpy as np
-#from openslide import OpenSlide
-#%matplotlib inline
-import matplotlib.pyplot as plt
+#from os import listdir
+#from os.path import join, isfile, exists, splitext
 import skimage.segmentation
 import skimage.filters
 import skimage.morphology
-import os
-import cv2
 import scipy.stats
 
-import numpy as np
-from scipy.ndimage.interpolation import zoom
-
-from keras.layers.convolutional import _Conv
-from keras.layers.pooling import _Pooling1D, _Pooling2D, _Pooling3D
-from keras.layers.wrappers import Wrapper
 from keras import backend as K
-
 
 from vis.losses import ActivationMaximization
 from vis.optimizer import Optimizer
