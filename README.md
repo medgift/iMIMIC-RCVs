@@ -9,7 +9,7 @@ This repository contains the code for implementing Regression Concept Vectors an
 
 ## Dependencies
 This code runs in Python >= 2.7.
-Keras >= 2.1 and Tensorflow backend are required.
+Keras >= 2.1 and Tensorflow (>= 1.4) backend. 
 
 To install the list of dependencies run:
 
@@ -17,9 +17,11 @@ To install the list of dependencies run:
 
 Run in Anaconda virtual environment (recommended): 
     
-    conda create -n venv pip python=2.7
+    conda create -n venv pip python=3.5
     source activate venv
     pip install -r requirements.txt
+
+Note: install tensorflow-gpu for gpu otpimization
 
 ## Usage
 This repository contains a jupyter notebook and the link to the necessary data and trained models to replicate the results. Please open the notebook RCV_notebook.ipynb for more information.
