@@ -9,7 +9,7 @@ This repository contains the code for implementing Regression Concept Vectors an
 
 ## Dependencies
 This code runs in Python >= 2.7.
-Keras >= 2.1 and Tensorflow backend are required.
+Keras >= 2.1 with Tensorflow backend.
 
 To install the list of dependencies run:
 
