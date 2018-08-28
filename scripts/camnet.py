@@ -5,6 +5,8 @@ except ImportError:
 
 import keras
 from keras import backend as K
+import resnet101
+import numpy as np
 
 def parseTrainingOptions(configFile):
     settings = {}
@@ -21,6 +23,8 @@ def parseTrainingOptions(configFile):
     settings['batch_size'] = int(config.get("train", "batch_size"))
     settings['epochs'] = int(config.get("train", "epochs"))
     settings['verbose'] = int(config.get("train", "verbose"))
+    settings['patch_size'] = int(config.get("settings", "patch_size"))
+
     return settings
 
 class Camnet():
@@ -40,7 +44,7 @@ class Camnet():
             finetuning = keras.layers.Dense(1, activation='sigmoid', name='predictions')(base_model.layers[-2].output)
             model = keras.models.Model(input=base_model.input, output=finetuning)
         elif settings['model_type']=='resnet101':
-            model = resnet101_model(settings, 3, 1)
+            model = resnet101.resnet101_model(settings, 3, 1)
         else:
             print('Initializing default model...')
             model = resnet101_model(settings, 3, 1)
@@ -57,3 +61,10 @@ class Camnet():
                       metrics=['accuracy']
                       )
         return model
+
+    def data_preprocessing(self, data):
+        print '[cam_net][data_preprocessing] Subtracting Imagenet mean and dividing by its std.'
+        preprocessedData = np.asarray([keras.applications.resnet50.preprocess_input(x) for x in data])
+        print '[cam_net][data_preprocessing] data mean: ', np.mean(preprocessedData)
+        print '[cam_net][data_preprocessing] data std: ', np.std(preprocessedData)
+        return preprocessedData

@@ -8,10 +8,7 @@ tensorflow==1.6
 pillow
 scipy
 matplotlib
-iphython
-jupyter
 scikit-image
 cv2
-openslide-python
 keras-vis
 logging

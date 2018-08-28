@@ -9,12 +9,12 @@ This repository contains the code for implementing Regression Concept Vectors an
 
 ## Dependencies
 This code runs in Python >= 2.7.
-Keras >= 2.1 and Tensorflow (>= 1.4) backend. 
+Keras >= 2.1 and Tensorflow (>= 1.4) backend.
 
 ## Usage
 This repository contains a jupyter notebook and the link to the necessary data and trained models to replicate the results. Please open the notebook RCV_notebook.ipynb for more information.
 
-## Summary 
+## Summary
 Recent work on Testing with Concept Activation
 Vectors (TCAV) proposed directional derivatives to quantify the in
 uence of user-defined concepts on the network output [1]. However, diagnostic
@@ -44,9 +44,9 @@ p-value |0.001 |0.001 | 0.01 |0.001 |0.001 |0.001|
 
 The performance of the linear regression was
 computed for all the patches over
-multiple reruns to check if the network is learning the concepts and in which layers. 
+multiple reruns to check if the network is learning the concepts and in which layers.
 The learning of the concepts across layers is linked to the size of the
-receptive field of the neurons and the increasing complexity of the sought patterns. 
+receptive field of the neurons and the increasing complexity of the sought patterns.
 Hence, more abstract concepts, potentially useful in other applications, can be learned and analyzed in deep layers of the network.
 
 <p align="center">
@@ -58,7 +58,7 @@ Br scores were formulated by taking into
 account the principles of explanation continuity and selectivity proposed in [2].
 For the former, we consider whether the sensitivity scores are similar for similar
 data samples. For the latter, we redistribute the final relevance to concepts with
-the strongest impact on the decision function. More details about the definition of Br scores are reported in the paper. 
+the strongest impact on the decision function. More details about the definition of Br scores are reported in the paper.
 
 <p align="center">
     <img src="results/tumorBr.png" width=700px>
@@ -70,21 +70,22 @@ We applied RCVs to eye data. See this repository for more details.
 
 ## Relevant Research
  * [1] Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (https://arxiv.org/abs/1711.11279; Kim, B. et al https://github.com/tensorflow/tcav/blob/master/README.md)
- * [2] Methods for interpreting and understanding deep neural networks. Montavon, G. et al 
- 
-## Installation 
+ * [2] Methods for interpreting and understanding deep neural networks. Montavon, G. et al
 
-Clone the repository 
+## Installation
+
+Clone the repository
 Download the model weights (tumor_classifier.h5) in /models/0528-1559/ from: https://www.dropbox.com/sh/a56pyl4i8oj9zl9/AADR74UXUu_uZA6Omb3B9Q1Ea?dl=0
+For resnet101 download the pretrained imagenet weights (store in scripts/models/imagenet_weights) from: https://drive.google.com/file/d/0Byy2AcGyEVxfTmRRVmpGWDczaXM/view
 
-Download the preprocessed Camelyon data (store in /data/camelyon17/) from: 
+Download a subsample of the preprocessed Camelyon data (store in /data/camelyon17/) from: https://github.com/medgift/PROCESS_UC1/blob/master/data/intermediate_datasets/cam17/patches.hdf5
 
 To install the list of dependencies run:
 
     pip install -r requirements.txt
 
-To Run in Anaconda virtual environment (recommended): 
-    
+To Run in Anaconda virtual environment (recommended):
+
     conda create -n venv pip python=3.5
     source activate venv
     pip install -r requirements.txt

@@ -27,7 +27,13 @@ from vis.utils import utils
 
 def get_normalizer():
     normalizer = stain_tools.ReinhardNormalizer()
-    patch = np.load('../normalizing_patch.npy')
+    # note:
+    # normalizing_patch is a patch from camelyon17
+    # used as a reference for the normalizer.
+    # To apply to a different data
+    # change normalizing_patch with a 224x224
+    # patch from  the dataset currently used
+    patch = np.load('data/normalizing_patch.npy')
     normalizer.fit(patch)
     return normalizer
 
@@ -192,7 +198,7 @@ def nuclei_morphology(stats):
     #nuclei_feats['max_diams'] = max_diameter(stats)
     #nuclei_feats['max_mjals'] = max_mjal(stats)
     nuclei_feats['mjaxis'] = max_mjal(stats)
-    #nuclei_feats['nuclei_centroids'] = nuclei_centroid(stats) 
+    #nuclei_feats['nuclei_centroids'] = nuclei_centroid(stats)
     #nuclei_feats['convex_areas'] = convex_area(stats)
     nuclei_feats['eccentricity'] = eccentricity(stats)
     nuclei_feats['perimeter'] = perimeter(stats)
@@ -253,7 +259,7 @@ def compute_tcav_with_losses(input_tensor, losses, seed_input, wrt_tensor=None, 
     #wrt_tensor = Reshape((14,14,1024,))(wrt_tensor)
     #print 'wrt_tensor', wrt_tensor
     #return
-    
+
     opt = Optimizer(input_tensor, losses, wrt_tensor=wrt_tensor, norm_grads=False)
     grads = opt.minimize(seed_input=seed_input, max_iter=1, grad_modifier=grad_modifier, verbose=False)[1]
 
@@ -310,7 +316,7 @@ def compute_tcav(model, layer_idx, filter_indices, seed_input,
     ]
     return compute_tcav_with_losses(model.input, losses, seed_input, wrt_tensor, grad_modifier)
 
-##- -- patch extraction 
+##- -- patch extraction
 
 def get_vertex(i):
     """Return a list of int coordinates of the nuclei annotation """
@@ -337,7 +343,7 @@ def draw_cells(mask_image,nuclei_contour):
 def draw_mask(mask_image,file_name):
         plt.figure(figsize=(30,30))
         plt.imshow(mask_image)
-        plt.savefig('./breast_nuclei/Annotations/masks/'+file_name+'.png')        
+        plt.savefig('./breast_nuclei/Annotations/masks/'+file_name+'.png')
 def get_mask(treeIterator, file_name):
     mask_image_cells=np.zeros((1001,1001))
     mask_image=np.zeros((1001,1001))
@@ -367,9 +373,9 @@ def visualize_overlap(patch, annotations):
     plt.imshow(annotations, alpha=0.5)
     plt.savefig('./training/'+str(np.random.random_integers(0,100000))+'.png')
     plt.close()
-    
+
 def get_patch_statistics(patch, annotations):
-    """Returns a set of average measurements of 
+    """Returns a set of average measurements of
         nuclei in the patch """
     thr = skimage.filters.threshold_otsu(annotations)
     annotations = skimage.morphology.closing(annotations>thr, skimage.morphology.square(3))
@@ -385,7 +391,7 @@ def get_n_patches(slide, mask_image,mask_image_cells, n = 1):
     for i in range(n):
         patch, anno, nuclei=cut_patch(slide, mask_image, mask_image_cells)
         #visualize_overlap(patch, anno)
-        measures, clear_annotations = get_patch_statistics(patch, anno)   
+        measures, clear_annotations = get_patch_statistics(patch, anno)
         patches_set.append([patch, clear_annotations, nuclei, measures])
     return patches_set
 
@@ -405,7 +411,7 @@ def get_cv_training_set(imgs_dir, repetition):
         mask_image, mask_image_cells = get_mask(treeIterator, file_name)
         patches_set = get_n_patches(slide, mask_image, mask_image_cells, n = 50)
         np.save(new_dir+file_name[:-4], patches_set)
-        
+
         training_set.append(patches_set)
     return training_set
 #===
