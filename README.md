@@ -11,18 +11,6 @@ This repository contains the code for implementing Regression Concept Vectors an
 This code runs in Python >= 2.7.
 Keras >= 2.1 and Tensorflow (>= 1.4) backend. 
 
-To install the list of dependencies run:
-
-    pip install -r requirements.txt
-
-Run in Anaconda virtual environment (recommended): 
-    
-    conda create -n venv pip python=3.5
-    source activate venv
-    pip install -r requirements.txt
-
-Note: install tensorflow-gpu for gpu otpimization
-
 ## Usage
 This repository contains a jupyter notebook and the link to the necessary data and trained models to replicate the results. Please open the notebook RCV_notebook.ipynb for more information.
 
@@ -83,6 +71,25 @@ We applied RCVs to eye data. See this repository for more details.
 ## Relevant Research
  * [1] Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (https://arxiv.org/abs/1711.11279; Kim, B. et al https://github.com/tensorflow/tcav/blob/master/README.md)
  * [2] Methods for interpreting and understanding deep neural networks. Montavon, G. et al 
+ 
+## Installation 
+
+Clone the repository 
+Download the model weights (tumor_classifier.h5) in /models/0528-1559/ from: https://www.dropbox.com/sh/a56pyl4i8oj9zl9/AADR74UXUu_uZA6Omb3B9Q1Ea?dl=0
+
+Download the preprocessed Camelyon data (store in /data/camelyon17/) from: 
+
+To install the list of dependencies run:
+
+    pip install -r requirements.txt
+
+To Run in Anaconda virtual environment (recommended): 
+    
+    conda create -n venv pip python=3.5
+    source activate venv
+    pip install -r requirements.txt
+
+Note: install tensorflow-gpu for gpu otpimization
 
 ## Credits
 
