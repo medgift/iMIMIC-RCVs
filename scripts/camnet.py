@@ -6,10 +6,7 @@ except ImportError:
 import keras
 from keras import backend as K
 import resnet101
-<<<<<<< HEAD
 import numpy as np
-=======
->>>>>>> origin/master
 
 def parseTrainingOptions(configFile):
     settings = {}

@@ -16,6 +16,7 @@ import keras.regularizers
 #from load_cifar10 import load_cifar10_data
 
 import sys
+
 sys.setrecursionlimit(3000)
 
 def identity_block(input_tensor, kernel_size, filters, stage, block):
@@ -156,10 +157,10 @@ def resnet101_model(net_settings, color_type=1, num_classes=None):
 
     if K.image_dim_ordering() == 'th':
       # Use pre-trained weights for Theano backend
-      weights_path = './imagenet_weights/resnet101_weights_th.h5'
+      weights_path = 'imagenet_weights/resnet101_weights_th.h5'
     else:
       # Use pre-trained weights for Tensorflow backend
-      weights_path = './imagenet_weights/resnet101_weights_tf.h5'
+      weights_path = 'scripts/models/imagenet_weights/resnet101_weights_tf.h5'
 
     model.load_weights(weights_path, by_name=True)
 
