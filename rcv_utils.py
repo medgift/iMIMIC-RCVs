@@ -25,6 +25,9 @@ from vis.optimizer import Optimizer
 from vis.backprop_modifiers import get
 from vis.utils import utils
 
+import sklearn.model_selection
+import sklearn.linear_model
+
 def get_normalizer():
     normalizer = stain_tools.ReinhardNormalizer()
     # note:
@@ -504,3 +507,36 @@ class ActivationMaximization(Loss):
                 loss += -K.mean(layer_output[utils.slicer[:, idx, ...]])
 
         return loss
+### regression
+def solve_regression(inputs, y, n_splits=3, n_repeats=1, random_state=12883823, verbose=1):
+    scores=[]
+    max_score = 0
+    direction = None
+    dirs=[]
+    rkf = sklearn.model_selection.RepeatedKFold(n_splits=n_splits, n_repeats=n_repeats, random_state=random_state)
+    counter = 0
+    for train, test in rkf.split(inputs):
+        if verbose:
+            print 'N. ', counter, '..'
+            print len(inputs[train])
+        reg = sklearn.linear_model.LinearRegression()
+        reg.fit(inputs[train], y[train])
+        trial_score = reg.score(inputs[test], y[test])
+        dirs.append(reg.coef_)
+        #print 'y[train]', y[train]
+        scores.append(trial_score)
+        if trial_score > max_score:
+            direction = reg.coef_
+        if verbose:
+            print trial_score
+        counter += 1
+    if verbose:
+        print np.mean(scores)
+        i=0
+        while i+1<len(dirs):
+            print 'angle: ', py_ang(dirs[i], dirs[i+1])
+            i+=1
+    return np.mean(scores), direction
+def py_ang(v1, v2):
+    cos = np.dot(v1,v2)
+    return np.arccos(cos/(np.linalg.norm(v1) * np.linalg.norm(v2)))
