@@ -28,6 +28,8 @@ from vis.utils import utils
 import sklearn.model_selection
 import sklearn.linear_model
 
+import math
+
 def get_normalizer():
     normalizer = stain_tools.ReinhardNormalizer()
     # note:
@@ -540,3 +542,15 @@ def solve_regression(inputs, y, n_splits=3, n_repeats=1, random_state=12883823, 
 def py_ang(v1, v2):
     cos = np.dot(v1,v2)
     return np.arccos(cos/(np.linalg.norm(v1) * np.linalg.norm(v2)))
+
+def plot_scores(scores, legend, legend_entry, color):
+    import matplotlib
+    mu = np.mean(scores)
+    variance = np.std(scores)
+    sigma = math.sqrt(variance)
+
+    x = np.linspace(mu - 3*sigma, mu + 3*sigma, 100)
+    plt.plot(x,matplotlib.mlab.normpdf(x, mu, sigma), color=color)
+    plt.scatter([mu,mu,mu,mu], [0,0.25,0.5,0.75],marker='*',c=color, s=3)
+    legend.append(legend_entry)
+    return mu, variance, sigma, legend
