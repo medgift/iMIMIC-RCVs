@@ -1,9 +1,18 @@
 # Regression Concept Vectors for Bidirectional Explanations in Histopathology (iMIMIC at MICCAI 2018)
-Mara Graziani, Vincent Andrearczyk, Henning Muller.
 
-To be presented at Interpretability of Machine Intelligence in Medical Image Computing at MICCAI 2018.
+## Reference
+Main paper to be cited
 
-Paper Preview:
+```
+@article{graziani2018regression,
+  title={Regression Concept Vectors for Bidirectional Explanations in Histopathology},
+  author={Graziani, Mara and Andrearczyk, Vincent and Muller, Henning},
+  journal={Understanding and Interpreting Machine Learning in Medical Image Computing Applications: First International Workshops},
+  year={2018}
+}
+```
+
+## Paper Preview:
 
 This repository contains the code for implementing Regression Concept Vectors and Bidirectional Relevance scores, which were used to obtain the results presented in the paper.
 
