@@ -4,11 +4,11 @@ seaborn
 h5py
 keras==2.1.3
 scikit-learn
-tensorflow==1.6
+tensorflow-gpu==1.6
 pillow
 scipy
 matplotlib
 scikit-image
-cv2
+python-opencv
 keras-vis
 logging
