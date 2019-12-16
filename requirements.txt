@@ -4,7 +4,7 @@ seaborn
 h5py
 keras==2.1.3
 scikit-learn
-tensorflow-gpu==1.6
+tensorflow-gpu==1.15.0
 pillow
 scipy
 matplotlib
